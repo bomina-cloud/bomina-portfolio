@@ -15,28 +15,47 @@ const style = delay ? `transition-delay:${delay}ms` : undefined;
 <script is:inline>
   (function () {
     if (typeof window === "undefined") return;
-    if (typeof IntersectionObserver === "undefined") {
-      document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("in"));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
+    if (window.__revealInit) return;
+    window.__revealInit = true;
+
+    let observer = null;
+
+    function ensureObserver() {
+      if (observer) return observer;
+      if (typeof IntersectionObserver === "undefined") {
+        return null;
+      }
+      observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              observer.unobserve(entry.target);
+            }
           }
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
-    );
-    const run = () => {
-      document.querySelectorAll("[data-reveal]:not(.in)").forEach((el) => io.observe(el));
-    };
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+      );
+      return observer;
+    }
+
+    function run() {
+      const io = ensureObserver();
+      const targets = document.querySelectorAll("[data-reveal]:not(.in)");
+      if (!io) {
+        targets.forEach((el) => el.classList.add("in"));
+        return;
+      }
+      targets.forEach((el) => io.observe(el));
+    }
+
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", run, { once: true });
     } else {
       run();
     }
+
+    // Re-run after every Astro View Transition navigation.
+    document.addEventListener("astro:page-load", run);
   })();
 </script>

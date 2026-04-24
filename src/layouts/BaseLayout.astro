@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "~/styles/global.css";
 import SEO from "~/components/SEO.astro";
 import PersonSchema from "~/components/PersonSchema.astro";
@@ -58,6 +59,7 @@ const canonical = new URL(normalizedPath, "https://bominayoon.com").toString();
     />
 
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter fallback="animate" />
     <SEO
       title={title}
       description={description}

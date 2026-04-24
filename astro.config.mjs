@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://bominayoon.com',
   trailingSlash: 'never',
   build: {
-    format: 'file',
+    format: 'directory',
   },
   integrations: [
     mdx(),

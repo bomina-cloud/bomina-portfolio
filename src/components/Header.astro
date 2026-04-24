@@ -1,0 +1,32 @@
+---
+import { site } from "~/lib/site";
+const current = Astro.url.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
+const isActive = (href: string) => {
+  if (href === "/") return current === "/";
+  return current === href || current.startsWith(href + "/");
+};
+---
+
+<header class="relative z-20">
+  <div class="mx-auto max-w-[1320px] px-5 md:px-10 pt-6 md:pt-8 pb-4 md:pb-5 flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-6">
+    <a href="/" class="group flex flex-col" aria-label={`${site.name} — home`}>
+      <span class="font-display text-[1.3rem] md:text-[1.4rem] leading-none tracking-tight underline-draw" style="font-variation-settings: 'opsz' 72, 'SOFT' 30;">{site.name}</span>
+      <span class="eyebrow mt-1.5 md:mt-2">{site.headline} · <span class="opacity-70">Portfolio</span></span>
+    </a>
+
+    <nav aria-label="Primary" class="flex flex-wrap items-center gap-x-4 gap-y-2 md:gap-x-7 text-[0.66rem] md:text-[0.72rem] font-mono uppercase tracking-[0.15em] md:tracking-[0.18em] md:pt-1">
+      {site.nav.map((item) => (
+        <a
+          href={item.href}
+          class="bracket-link"
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          <span>{item.label}</span>
+        </a>
+      ))}
+    </nav>
+  </div>
+  <div class="mx-auto max-w-[1320px] px-5 md:px-10">
+    <div class="rule"></div>
+  </div>
+</header>

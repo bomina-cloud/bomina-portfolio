@@ -1,0 +1,21 @@
+---
+interface Props {
+  variant?: "line" | "ornament" | "asterism";
+  class?: string;
+}
+const { variant = "ornament", class: className = "" } = Astro.props;
+---
+
+{variant === "line" && <div class={`rule ${className}`}></div>}
+
+{variant === "ornament" && (
+  <div class={`hr-ornament ${className}`} role="presentation" aria-hidden="true">
+    <span>§</span>
+  </div>
+)}
+
+{variant === "asterism" && (
+  <div class={`hr-ornament ${className}`} role="presentation" aria-hidden="true">
+    <span>✺ ✺ ✺</span>
+  </div>
+)}

@@ -1,0 +1,290 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Breadcrumbs from "~/components/Breadcrumbs.astro";
+import Divider from "~/components/Divider.astro";
+import { site } from "~/lib/site";
+
+const education = [
+  {
+    degree: "Doctor of Philosophy in Industrial Design",
+    school: "Hongik University, Seoul, South Korea",
+    year: "2022",
+    note: "Research topics: Open innovation, innovation concept development methodologies, implementation frameworks, upstream/early-stage processes. Dissertation: A Study on the Co-Design Innovation Framework for Corporate Organizations in the Changing Automotive Industry.",
+  },
+  {
+    degree: "Master of Art in Industrial Design",
+    school: "Hongik University, Seoul, South Korea",
+    year: "2009",
+  },
+  {
+    degree: "Bachelor of Art in Industrial Design, Transportation Design",
+    school: "Hongik University, Seoul, South Korea",
+    year: "2004",
+    note: "Awarded a full-tuition scholarship at the time of admission (2000).",
+  },
+];
+
+const experience = [
+  {
+    title: "Senior Manager",
+    company: "Hyundai Motor Group, South Korea",
+    period: "Jan 2018 – Present",
+    bullets: [
+      "Led Hyundai's enterprise-scale future strategy programs — including the 2050 Future City Project, AI Future Strategy Roadmap, and global Software-Defined Vehicle transformation — shaping CEO-level decision-making and defining group-wide 10–15 year strategic directions.",
+      "Directed next-generation autonomous logistics innovation, leading the hydrogen FCEV-powered Autonomous Trailer Drone program for the NEOM Smart City initiative and architecting the Hub-less Mega Port.",
+      "Led multi-company, multi-country collaborations with NEOM OXAGON, Element AI, Affectiva, Uber, Disney, KAIST, Toray, and Hyundai Motor America — orchestrating 100+ member cross-functional teams.",
+      "Developed platform-level mobility innovation including the Mobility Media Platform (MMP) for autonomous vehicles and Hyundai's CES 2024 DICE concept, integrating AR/VR, creator-based media services, and SDV OS (Pleos).",
+      "Established strategic R&D frameworks across biomimicry, advanced materials, AI, and digital engineering — creating governance systems, technical validation processes, and long-term execution pipelines across Hyundai's global R&D organizations.",
+    ],
+  },
+  {
+    title: "Senior Designer",
+    company: "Hyundai Motor Group, South Korea",
+    period: "Jan 2013 – May 2017",
+    bullets: [
+      "Established Hyundai–Kia's first feature-first development process, creating the Advanced Feature Development Strategy and launching the company-wide T-Car advanced feature program (~30 engineering teams).",
+      "Developed future consumer and Gen-Z UX concepts — multi-touch controllers, force-sensing UI, personalized displays — many of which became mass-production features for Genesis, Hyundai, and Kia.",
+      "Built long-term Technology Roadmaps (TRM) by evaluating 30+ emerging technologies and defining 5–10 year development priorities with the Central Research Institute.",
+      "Led cultural/technology convergence research with GQ, Chicago Innovation Center, and MIT Mobile Experience Lab, translating cultural foresight into emotional-technology UX concepts later applied to flagship vehicles.",
+      "Created high-fidelity UX prototypes and FE models, including large-scale BUCK models and digital UX simulations, used by engineering teams to validate feasibility and guide advanced development.",
+    ],
+  },
+  {
+    title: "Designer",
+    company: "Hyundai Motor Group, South Korea",
+    period: "Feb 2004 – Dec 2012",
+    bullets: [
+      "Created and institutionalized the Pre-Concept Development Framework, redefining the early M-30 stage so functional, technical, and user-driven ideas could be integrated before styling — later adopted as the official Hyundai–Kia process.",
+      "Led early product concept planning for key models (Carnival, Sorento, K5), generating consumer-centric Unique Selling Propositions such as flexible seating, overhead console concepts, family-based interaction layouts, and modular cargo solutions.",
+      "Conducted cross-cultural user research (U.S.–Korea) to identify unmet needs and embed early-stage UX into platform and packaging decisions.",
+      "Collaborated with global institutions (Aalto University, MIT Mobile Experience Lab, European design groups) to develop design methodologies linking human behavior, culture, and long-range mobility trends.",
+      "Built foundational UX/HMI concepts — including panoramic infotainment, adaptive displays, and multi-modal interaction systems — that influenced Hyundai/Kia's later UX innovation roadmap.",
+    ],
+  },
+];
+
+const affiliations = [
+  "Design Evaluation Panelist Committees at the Korea Institute of Design Promotion (KIDP), 2008–2010, 2022–2023, 2025.",
+  "Member of Korea Society of Basic Design & Art (KSBDA), 2006 – 2023.",
+  "World Futures Studies Federation (WFSF, James Dator), 2025.",
+];
+
+const presentations = [
+  {
+    title: "2050 Future-City Scenarios and Hyundai Motor's Future Business Opportunities: Intellectual Property Strategies for Smart Cities",
+    venue: "Seoul Intellectual Property Innovation Challenge",
+    note: "Co-lecture with Hyundai Motor IP Division",
+    year: "2022",
+  },
+  {
+    title: "Open-Innovation–Driven Product Development: Lessons from Hyundai Motor's CES Case Studies",
+    venue: "Hongik University",
+    year: "2022 & 2025",
+  },
+  {
+    title: "Open-Innovation Methods for Developing Breakthrough Products",
+    venue: "Samsung SDS / Design Thinking Association",
+    year: "2022",
+  },
+  {
+    title: "Future Mobility Business Opportunities Through Media-Driven Innovation",
+    venue: "Seongsu-dong RENT",
+    year: "2021",
+  },
+];
+
+const leadership = [
+  {
+    title: "Global Workshop for AI Future Strategy — Lead Facilitator and Program Architect",
+    year: "2018",
+    bullets: [
+      "Planned and facilitated Hyundai Motor Group's global AI strategy workshop, engaging global C-level executives, 50 senior directors, and more than 170 internal participants.",
+      "Coordinated keynote sessions featuring Andrew Ng (Stanford), Philippe Beaudoin (Element AI), Eric Xing (CMU), and multiple AI research leaders whose work on future scenarios and technology roadmaps helped shape the group-wide strategic direction for AI-enabled automotive value chains and in-vehicle experience.",
+      "Led a two-day executive workshop that translated expert insights into actionable business opportunities and produced 2020, 2025, and 2030 development roadmaps for multiple divisions.",
+    ],
+  },
+  {
+    title: "2050 Future-City Scenario Program — Core-Value Workshop Facilitator",
+    year: "2019",
+    bullets: [
+      "Designed and facilitated front-end foresight workshops in Singapore and Seoul with global experts in energy, urban systems, public policy, digital infrastructure, and resilient-city planning.",
+      "Guided cross-departmental teams — including EV, hydrogen energy, ICT platform, AI service, connectivity, and smart-city divisions — in deriving future business opportunities and aligning long-term strategic directions.",
+      "Supported CEO-level strategy formation by translating future-city scenarios into actionable group-wide strategic frameworks.",
+    ],
+  },
+  {
+    title: "Mobility Insight Forum (San Francisco) — Keynote Strategy Lead",
+    year: "2019",
+    bullets: [
+      "Led the planning and strategic framing for the keynote address delivered by the Executive Chair, defining Hyundai Motor's human-centered mobility vision for global industry leaders.",
+      "Developed scenario-based mobility insights covering future urban structure, sustainable mobility systems, and integrated digital-physical infrastructure.",
+      "Produced strategic presentation materials outlining Hyundai's future mobility philosophy — centered on human-centric smart cities — and conducted briefing sessions for over 400 North American mobility experts, startups, and venture capital partners.",
+    ],
+  },
+];
+
+const certificates = [
+  "Certified Trainer in Future Thinking — Institute for the Future (IFTF), Palo Alto, CA. Expertise in scenario planning, future mapping, and signals analysis, applying foresight methods to organizational strategy, innovation projects, and long-term AI and urban future initiatives.",
+];
+
+const skills = {
+  Languages: ["Full Professional Proficiency in English", "Native in Korean"],
+  Design: ["Blender", "Maya", "Adobe Photoshop", "Adobe Illustrator"],
+  "3D Modeling & Simulation": ["Autodesk Alias", "Lyno", "VRED", "Unreal", "SIGMA"],
+  "UI/UX Design": ["Figma"],
+  Productivity: ["Microsoft Word", "Excel", "PowerPoint"],
+};
+---
+
+<BaseLayout
+  title="About"
+  description="Bomina Yoon — Ph.D. Industrial Design (Hongik University), 21-year Hyundai Motor Group veteran, future mobility strategist. Education, professional experience, leadership, invited presentations, and certifications."
+  path="/about"
+  type="profile"
+  includePersonSchema={true}
+  keywords={["CV", "resume", "about", "Hongik University", "IFTF"]}
+>
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 pt-10 md:pt-16 pb-10">
+    <Breadcrumbs trail={[{ label: "About", href: "/about" }]} />
+    <div class="mt-10 grid grid-cols-12 gap-6 md:gap-10">
+      <div class="col-span-12 md:col-span-2">
+        <p class="eyebrow">About</p>
+        <p class="eyebrow mt-1">{site.nameKo}</p>
+      </div>
+      <div class="col-span-12 md:col-span-10">
+        <h1 class="display-xl max-w-[20ch]">
+          A future mobility strategist building programs that <span class="display-italic">outlive</span> the concepts they seed.
+        </h1>
+        <p class="mt-10 max-w-[64ch] text-[1.05rem] leading-[1.65] text-[color:var(--color-ink-soft)]">
+          As a future mobility strategist and highly experienced automobile designer, I have led transformative programs across advanced vehicle concept development, AI-driven technology road mapping, next-generation UX innovation, and global mobility research that informed long-term corporate strategy and real-world proof-of-concept validation. Building on a foundation in industrial design, I pioneered designer-led early development frameworks such as the Pre-Concept process, shaped future urban mobility and autonomous business model ecosystems through large-scale foresight initiatives, and translated emerging technologies into production-ready solutions. 21 years of work at Hyundai Motor Group.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Divider variant="asterism" class="mx-auto max-w-[1320px] px-6 md:px-10" />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 py-16 md:py-24" aria-labelledby="education">
+    <div class="grid grid-cols-12 gap-6 md:gap-10">
+      <div class="col-span-12 md:col-span-3">
+        <h2 id="education" class="eyebrow">§ 01 — Education</h2>
+      </div>
+      <ol class="col-span-12 md:col-span-9 divide-y divide-[color:var(--color-line)]">
+        {education.map((e) => (
+          <li class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-8 py-8 first:pt-0">
+            <span class="md:col-span-2 font-mono text-[0.78rem] md:text-[0.85rem] tracking-wider text-[color:var(--color-muted)] md:pt-2">{e.year}</span>
+            <div class="md:col-span-10 min-w-0">
+              <h3 class="font-serif italic text-[1rem] md:text-[1.5rem] leading-tight">{e.degree}</h3>
+              <p class="text-[0.9rem] md:text-[1rem] text-[color:var(--color-muted)] mt-1.5">{e.school}</p>
+              {e.note && <p class="text-[0.88rem] md:text-[0.93rem] mt-3 max-w-[64ch] leading-[1.6] text-[color:var(--color-ink-soft)]">{e.note}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <Divider variant="line" class="mx-auto max-w-[1320px] px-6 md:px-10" />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 py-16 md:py-24" aria-labelledby="experience">
+    <div class="grid grid-cols-12 gap-6 md:gap-10">
+      <div class="col-span-12 md:col-span-3">
+        <h2 id="experience" class="eyebrow">§ 02 — Professional Experience</h2>
+      </div>
+      <ol class="col-span-12 md:col-span-9 divide-y divide-[color:var(--color-line)]">
+        {experience.map((job) => (
+          <li class="py-10 first:pt-0 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+            <div class="md:col-span-4 min-w-0">
+              <p class="eyebrow">{job.period}</p>
+              <h3 class="display-md mt-2 leading-tight">{job.title}</h3>
+              <p class="font-serif italic text-[1rem] md:text-[1.05rem] text-[color:var(--color-muted)] mt-1">{job.company}</p>
+            </div>
+            <ul class="md:col-span-8 min-w-0 space-y-3 text-[0.92rem] md:text-[0.95rem] leading-[1.6] max-w-[64ch]">
+              {job.bullets.map((b) => (
+                <li class="grid grid-cols-[0.9rem_1fr] gap-2"><span class="text-[color:var(--color-muted)]">·</span><span>{b}</span></li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <Divider variant="line" class="mx-auto max-w-[1320px] px-6 md:px-10" />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 py-16 md:py-24" aria-labelledby="leadership">
+    <div class="grid grid-cols-12 gap-6 md:gap-10">
+      <div class="col-span-12 md:col-span-3">
+        <h2 id="leadership" class="eyebrow">§ 03 — Leadership</h2>
+      </div>
+      <ol class="col-span-12 md:col-span-9 space-y-12">
+        {leadership.map((l) => (
+          <li class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4">
+            <span class="md:col-span-2 font-mono text-[0.78rem] md:text-[0.85rem] tracking-wider text-[color:var(--color-muted)] md:pt-2">{l.year}</span>
+            <div class="md:col-span-10 min-w-0">
+              <h3 class="font-serif text-[1.05rem] md:text-[1.3rem] leading-snug italic max-w-[56ch]">{l.title}</h3>
+              <ul class="mt-4 space-y-2 text-[0.88rem] md:text-[0.92rem] leading-[1.6] max-w-[64ch]">
+                {l.bullets.map((b) => <li class="grid grid-cols-[0.8rem_1fr] gap-2"><span class="text-[color:var(--color-muted)]">·</span><span>{b}</span></li>)}
+              </ul>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <Divider variant="line" class="mx-auto max-w-[1320px] px-6 md:px-10" />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 py-16 md:py-24">
+    <div class="grid grid-cols-12 gap-6 md:gap-10">
+      <div class="col-span-12 md:col-span-3">
+        <h2 class="eyebrow">§ 04 — Invited &amp; Affiliations</h2>
+      </div>
+      <div class="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <div>
+          <p class="eyebrow mb-5">Invited Presentations</p>
+          <ol class="space-y-6">
+            {presentations.map((p) => (
+              <li>
+                <p class="font-mono text-[0.75rem] text-[color:var(--color-muted)] tracking-wider">{p.year}</p>
+                <p class="font-serif italic text-[1.05rem] mt-1 leading-tight">{p.title}</p>
+                <p class="text-[0.88rem] text-[color:var(--color-muted)] mt-1.5">{p.venue}{p.note ? ` · ${p.note}` : ""}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <p class="eyebrow mb-5">Professional Affiliations</p>
+          <ul class="space-y-3 text-[0.93rem] leading-[1.55]">
+            {affiliations.map((a) => <li class="grid grid-cols-[1rem_1fr] gap-2"><span class="text-[color:var(--color-muted)]">·</span><span>{a}</span></li>)}
+          </ul>
+
+          <p class="eyebrow mt-10 mb-5">Certificates</p>
+          <ul class="space-y-3 text-[0.93rem] leading-[1.55]">
+            {certificates.map((c) => <li class="grid grid-cols-[1rem_1fr] gap-2"><span class="text-[color:var(--color-muted)]">·</span><span>{c}</span></li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Divider variant="line" class="mx-auto max-w-[1320px] px-6 md:px-10" />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 py-16 md:py-24" aria-labelledby="skills">
+    <div class="grid grid-cols-12 gap-6 md:gap-10">
+      <div class="col-span-12 md:col-span-3">
+        <h2 id="skills" class="eyebrow">§ 05 — Languages &amp; Software</h2>
+      </div>
+      <div class="col-span-12 md:col-span-9 grid grid-cols-2 md:grid-cols-5 gap-8">
+        {Object.entries(skills).map(([category, items]) => (
+          <div>
+            <p class="eyebrow mb-3">{category}</p>
+            <ul class="space-y-1 text-[0.9rem]">
+              {items.map((i) => <li>{i}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,90 @@
+---
+interface Props {
+  url: string;
+  title?: string;
+  caption?: string;
+}
+
+const { url, title, caption } = Astro.props;
+
+type Parsed = { provider: "youtube" | "vimeo" | "direct"; embedUrl: string; id?: string };
+
+function parseUrl(raw: string): Parsed | null {
+  try {
+    const u = new URL(raw);
+    const host = u.hostname.replace(/^www\./, "");
+
+    // youtube.com/watch?v=ID, youtu.be/ID, youtube.com/embed/ID, youtube.com/shorts/ID
+    if (host === "youtube.com" || host === "m.youtube.com") {
+      const v = u.searchParams.get("v");
+      if (v) return { provider: "youtube", id: v, embedUrl: `https://www.youtube-nocookie.com/embed/${v}` };
+      const m = u.pathname.match(/\/(embed|shorts)\/([\w-]+)/);
+      if (m) return { provider: "youtube", id: m[2], embedUrl: `https://www.youtube-nocookie.com/embed/${m[2]}` };
+    }
+    if (host === "youtu.be") {
+      const id = u.pathname.slice(1);
+      if (id) return { provider: "youtube", id, embedUrl: `https://www.youtube-nocookie.com/embed/${id}` };
+    }
+
+    // vimeo.com/ID, player.vimeo.com/video/ID
+    if (host === "vimeo.com") {
+      const id = u.pathname.split("/").filter(Boolean).pop();
+      if (id) return { provider: "vimeo", id, embedUrl: `https://player.vimeo.com/video/${id}` };
+    }
+    if (host === "player.vimeo.com") {
+      return { provider: "vimeo", embedUrl: raw };
+    }
+
+    // Direct video file
+    if (/\.(mp4|webm|mov)$/i.test(u.pathname)) {
+      return { provider: "direct", embedUrl: raw };
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+const parsed = parseUrl(url);
+const altTitle = title ?? "Project video";
+---
+
+{parsed && (
+  <figure class="my-10 md:my-14">
+    <div class="relative w-full overflow-hidden border border-[color:var(--color-line)] bg-[color:var(--color-paper-deep)]/40" style="aspect-ratio: 16 / 9;">
+      {parsed.provider === "direct" ? (
+        <video
+          controls
+          preload="metadata"
+          class="absolute inset-0 h-full w-full"
+          aria-label={altTitle}
+        >
+          <source src={parsed.embedUrl} />
+        </video>
+      ) : (
+        <iframe
+          src={parsed.embedUrl}
+          title={altTitle}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          class="absolute inset-0 h-full w-full border-0"
+        ></iframe>
+      )}
+    </div>
+    {(caption || title) && (
+      <figcaption class="mt-3 text-[0.88rem] md:text-[0.92rem] text-[color:var(--color-muted)] font-serif italic leading-[1.45]">
+        {caption ?? title}
+      </figcaption>
+    )}
+  </figure>
+)}
+
+{!parsed && (
+  <div class="my-6 p-4 border border-[color:var(--color-line)] text-[0.88rem] text-[color:var(--color-muted)]">
+    <p class="eyebrow mb-1">Video unavailable</p>
+    <p><a href={url} rel="noopener" target="_blank" class="underline underline-offset-2">{url}</a></p>
+    {caption && <p class="mt-1 italic">{caption}</p>}
+  </div>
+)}

@@ -1,0 +1,37 @@
+---
+import { site } from "~/lib/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-28 md:mt-36 bg-[color:var(--color-paper-deep)]/40">
+  <div class="mx-auto max-w-[1320px] px-6 md:px-10">
+    <div class="rule"></div>
+  </div>
+  <div class="mx-auto max-w-[1320px] px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <p class="display-md">{site.name}</p>
+      <p class="eyebrow mt-2">{site.nameKo} · {site.headline}</p>
+      <p class="mt-6 max-w-[48ch] text-[0.95rem] leading-[1.6] text-[color:var(--color-ink-soft)]">
+        Available for advisory engagements, speaking, and long-horizon strategy collaborations spanning
+        mobility, smart-city systems, and AI-enabled industrial transformation.
+      </p>
+    </div>
+
+    <div class="md:col-span-3">
+      <p class="eyebrow mb-4">Get in touch</p>
+      <ul class="space-y-2.5 text-[0.95rem]">
+        <li><a href={`mailto:${site.email}`} class="underline-draw">{site.email}</a></li>
+        <li><a href={site.social.linkedin} rel="me noopener" target="_blank" class="underline-draw">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-4 md:text-right">
+      <p class="eyebrow mb-4">Site</p>
+      <ul class="space-y-2 text-[0.9rem] text-[color:var(--color-muted)]">
+        <li>Built with Astro · Statically rendered</li>
+        <li><a href="/sitemap-index.xml" class="underline-draw">sitemap</a> · <a href="/robots.txt" class="underline-draw">robots</a></li>
+        <li>© {year} {site.name}. All rights reserved.</li>
+      </ul>
+    </div>
+  </div>
+</footer>

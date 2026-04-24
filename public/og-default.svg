@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fafaf7"/>
+  <line x1="80" y1="120" x2="1120" y2="120" stroke="#0a0a0a" stroke-width="1"/>
+  <line x1="80" y1="510" x2="1120" y2="510" stroke="#0a0a0a" stroke-width="1"/>
+  <text x="80" y="100" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="18" fill="#6b6b66" letter-spacing="3">BOMINAYOON.COM · FUTURE MOBILITY STRATEGIST</text>
+  <text x="80" y="260" font-family="Georgia, Source Serif 4, serif" font-size="96" fill="#0a0a0a" font-weight="500" letter-spacing="-2">Bomina Yoon</text>
+  <text x="80" y="330" font-family="Georgia, Source Serif 4, serif" font-size="42" fill="#0a0a0a" font-weight="400" letter-spacing="-0.5">윤보미나 · Ph.D. Industrial Design</text>
+  <text x="80" y="430" font-family="ui-sans-serif, system-ui" font-size="28" fill="#1a1a1a">21 years at Hyundai Motor Group — CES flagships,</text>
+  <text x="80" y="470" font-family="ui-sans-serif, system-ui" font-size="28" fill="#1a1a1a">NEOM smart city, SDV, biomimicry, 2050 foresight.</text>
+  <text x="80" y="570" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="16" fill="#6b6b66" letter-spacing="3">BMN.YOON@GMAIL.COM</text>
+</svg>

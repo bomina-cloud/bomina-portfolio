@@ -1,0 +1,42 @@
+---
+interface Props {
+  class?: string;
+  delay?: number;
+  as?: "div" | "section" | "article" | "li" | "header";
+}
+const { class: className = "", delay = 0, as: Tag = "div" } = Astro.props;
+const style = delay ? `transition-delay:${delay}ms` : undefined;
+---
+
+<Tag class:list={["fade-up", className]} style={style} data-reveal>
+  <slot />
+</Tag>
+
+<script is:inline>
+  (function () {
+    if (typeof window === "undefined") return;
+    if (typeof IntersectionObserver === "undefined") {
+      document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("in"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
+    );
+    const run = () => {
+      document.querySelectorAll("[data-reveal]:not(.in)").forEach((el) => io.observe(el));
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run, { once: true });
+    } else {
+      run();
+    }
+  })();
+</script>

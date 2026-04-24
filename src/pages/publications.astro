@@ -1,0 +1,96 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Breadcrumbs from "~/components/Breadcrumbs.astro";
+import Divider from "~/components/Divider.astro";
+import RevealOnScroll from "~/components/RevealOnScroll.astro";
+import { site } from "~/lib/site";
+
+const publications = (await getCollection("publications")).sort((a, b) => a.data.order - b.data.order);
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${site.url}/publications#collection`,
+  name: "Publications — Bomina Yoon",
+  description:
+    "Peer-reviewed publications and dissertations by Bomina Yoon on automotive pre-concept frameworks, co-design innovation, and low-cost vehicle design for emerging markets.",
+  url: `${site.url}/publications`,
+  about: { "@type": "Person", name: site.name, url: site.url },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: publications.length,
+    itemListElement: publications.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": p.data.type === "dissertation" || p.data.type === "thesis" ? "Thesis" : "ScholarlyArticle",
+        name: p.data.title,
+        author: p.data.authors.map((a) => ({ "@type": "Person", name: a })),
+        datePublished: String(p.data.year),
+        publisher: { "@type": "Organization", name: p.data.venue },
+      },
+    })),
+  },
+};
+
+const rendered = await Promise.all(
+  publications.map(async (p) => {
+    const { Content } = await render(p);
+    return { data: p.data, id: p.id, Content };
+  })
+);
+---
+
+<BaseLayout
+  title="Publications"
+  description="Peer-reviewed publications and dissertations by Bomina Yoon on automotive pre-concept frameworks, co-design innovation, and low-cost vehicle design for emerging markets."
+  path="/publications"
+  keywords={["publications", "dissertation", "Hongik University", "Korea Society of Basic Design & Art", "pre-concept framework"]}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 pt-10 md:pt-16 pb-10">
+    <Breadcrumbs trail={[{ label: "Publications", href: "/publications" }]} />
+    <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10">
+      <div class="md:col-span-2 flex md:block items-center gap-4">
+        <p class="eyebrow">{publications.length} Papers</p>
+        <p class="eyebrow md:mt-1">2007 – 2022</p>
+      </div>
+      <div class="md:col-span-10 min-w-0">
+        <h1 class="display-xl md:max-w-[20ch]">
+          Research on <span class="display-italic">innovation frameworks</span> and early-stage automotive design.
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <Divider variant="asterism" class="mx-auto max-w-[1320px] px-6 md:px-10 mt-6" />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 py-10 md:py-16">
+    <ol class="space-y-16 md:space-y-24">
+      {rendered.map(({ data, id, Content }, i) => (
+        <RevealOnScroll as="li" delay={Math.min(i * 60, 320)}>
+          <article id={id} class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-10" itemscope itemtype={data.type === "dissertation" || data.type === "thesis" ? "https://schema.org/Thesis" : "https://schema.org/ScholarlyArticle"}>
+            <div class="md:col-span-1 flex md:block items-center gap-3">
+              <p class="font-mono text-[0.72rem] md:text-[0.78rem] tracking-[0.18em] text-[color:var(--color-muted)]" itemprop="datePublished">{data.year}</p>
+              <p class="font-mono text-[0.6rem] md:text-[0.64rem] tracking-[0.18em] text-[color:var(--color-muted)] md:mt-1 uppercase">{data.type}</p>
+            </div>
+            <div class="md:col-span-11 min-w-0">
+              <h2 class="display-md md:max-w-[38ch]" itemprop="name headline">{data.title}</h2>
+              <p class="mt-3 text-[0.82rem] md:text-[0.9rem] text-[color:var(--color-muted)]">
+                <span class="font-serif italic">
+                  {data.authors.map((a, idx) => (<span itemprop="author">{a}{idx < data.authors.length - 1 ? ", " : ""}</span>))}
+                </span>
+                · <span itemprop="publisher">{data.venue}</span>{data.volume ? `, ${data.volume}` : ""}{data.pages ? `, ${data.pages}` : ""}
+              </p>
+              <div class="prose mt-5 md:mt-6" itemprop="abstract">
+                <Content />
+              </div>
+            </div>
+          </article>
+        </RevealOnScroll>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>

@@ -1,0 +1,443 @@
+@import "tailwindcss";
+
+/* Fonts are loaded via <link rel="stylesheet"> in BaseLayout.astro to
+   avoid the "@import must precede other statements" warning that arises
+   when Tailwind's import expands before a CSS @import url(). */
+
+@theme {
+  --font-display: "Fraunces", "Times New Roman", Georgia, serif;
+  --font-serif: "Instrument Serif", "Fraunces", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-ink: #111110;
+  --color-ink-soft: #2a2926;
+  --color-paper: #f5f2ea;
+  --color-paper-deep: #ebe6d8;
+  --color-muted: #6b685f;
+  --color-line: #d8d4c5;
+  --color-line-soft: #e8e4d8;
+  --color-accent: #ad2b1f;
+
+  --tracking-display: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-wide: 0.12em;
+  --tracking-wider: 0.18em;
+
+  --shadow-inset: inset 0 0 0 1px color-mix(in oklab, var(--color-ink) 8%, transparent);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+  }
+
+  /* Ensure grid/flex children can shrink below their content width */
+  .grid > *, .flex > * {
+    min-width: 0;
+  }
+
+  /* Default safe wrapping for all text-bearing elements */
+  h1, h2, h3, h4, p, li, a, span {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  /* Subtle paper grain — canvas feel without being noisy */
+  body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.55;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(17, 17, 16, 0.015) 0, transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(17, 17, 16, 0.02) 0, transparent 45%);
+    background-attachment: fixed;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.04;
+    font-variation-settings: "opsz" 64, "SOFT" 40;
+    letter-spacing: var(--tracking-display);
+  }
+
+  h1 {
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  em {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 768px) {
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: var(--tracking-wider);
+    }
+  }
+
+  .bracket-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15em;
+    transition: color 180ms ease;
+  }
+
+  .bracket-link::before,
+  .bracket-link::after {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(0.3em);
+    transition: opacity 240ms ease, transform 240ms ease;
+    color: var(--color-muted);
+  }
+
+  .bracket-link::before {
+    content: "[";
+  }
+
+  .bracket-link::after {
+    content: "]";
+    transform: translateX(-0.3em);
+  }
+
+  .bracket-link:hover::before,
+  .bracket-link:hover::after,
+  .bracket-link[aria-current]::before,
+  .bracket-link[aria-current]::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bracket-link:hover,
+  .bracket-link[aria-current] {
+    color: var(--color-ink);
+  }
+
+  .underline-draw {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-draw::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.08em;
+    height: 1px;
+    background: currentColor;
+    transform-origin: right center;
+    transform: scaleX(0);
+    transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .underline-draw:hover::after,
+  a:hover .underline-draw::after {
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+
+  .hr-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-muted);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .hr-ornament::before,
+  .hr-ornament::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--color-line);
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--color-line);
+    width: 100%;
+  }
+
+  .rule-soft {
+    height: 1px;
+    background: var(--color-line-soft);
+    width: 100%;
+  }
+
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    padding: 0.2rem 0.45rem;
+    border: 1px solid var(--color-line);
+    border-radius: 2px;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (min-width: 768px) {
+    .chip {
+      font-size: 0.68rem;
+      letter-spacing: var(--tracking-wide);
+      padding: 0.25rem 0.55rem;
+    }
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-ink);
+    transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+  }
+
+  .pill:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .pill.ghost {
+    border-color: var(--color-line);
+    color: var(--color-ink-soft);
+  }
+
+  .pill.ghost:hover {
+    border-color: var(--color-ink);
+    background: transparent;
+    color: var(--color-ink);
+  }
+
+  .display-xl {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 7vw, 5.75rem);
+    line-height: 1.02;
+    letter-spacing: var(--tracking-display);
+    font-variation-settings: "opsz" 144, "SOFT" 20;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    hyphens: none;
+  }
+
+  .display-lg {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 5vw, 3.8rem);
+    line-height: 1.06;
+    letter-spacing: var(--tracking-display);
+    font-variation-settings: "opsz" 96, "SOFT" 25;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    hyphens: none;
+  }
+
+  .display-md {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 3.5vw, 2.4rem);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-tight);
+    font-variation-settings: "opsz" 72, "SOFT" 30;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    hyphens: none;
+  }
+
+  .display-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .prose {
+    max-width: 68ch;
+    color: var(--color-ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .prose h2 {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    line-height: 1.1;
+    letter-spacing: var(--tracking-tight);
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-ink);
+    font-variation-settings: "opsz" 72, "SOFT" 30;
+  }
+
+  .prose h3 {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.65rem;
+    color: var(--color-ink);
+  }
+
+  .prose p {
+    margin-bottom: 1.2rem;
+  }
+
+  .prose ul, .prose ol {
+    margin: 1rem 0 1.4rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .prose ul li, .prose ol li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .prose ul li::before {
+    content: "·";
+    position: absolute;
+    left: 0.5rem;
+    top: -0.1rem;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: var(--color-muted);
+  }
+
+  .prose ol {
+    counter-reset: orderedlist;
+  }
+
+  .prose ol li {
+    counter-increment: orderedlist;
+  }
+
+  .prose ol li::before {
+    content: counter(orderedlist, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-wide);
+    color: var(--color-muted);
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .prose blockquote {
+    border-left: 1px solid var(--color-ink);
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    margin: 1.6rem 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.35;
+    color: var(--color-ink);
+  }
+
+  .prose a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-muted);
+  }
+
+  .prose a:hover {
+    text-decoration-color: var(--color-ink);
+  }
+
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--color-line);
+    border-radius: 2px;
+    background: color-mix(in oklab, var(--color-paper-deep) 50%, transparent);
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fade-up.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-up.in,
+  .underline-draw::after,
+  .bracket-link::before,
+  .bracket-link::after {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

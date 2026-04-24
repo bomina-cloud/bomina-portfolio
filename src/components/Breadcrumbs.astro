@@ -1,0 +1,43 @@
+---
+import { site } from "~/lib/site";
+
+interface Crumb {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  trail: Crumb[];
+}
+
+const { trail } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Index", item: site.url },
+    ...trail.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 2,
+      name: c.label,
+      item: new URL(c.href, site.url).toString(),
+    })),
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-[0.72rem] font-mono uppercase tracking-[0.18em] text-[color:var(--color-muted)]">
+  <a href="/" class="hover:text-[color:var(--color-ink)]">Index</a>
+  {trail.map((c, i) => (
+    <>
+      <span class="opacity-50">/</span>
+      {i === trail.length - 1 ? (
+        <span class="text-[color:var(--color-ink)]">{c.label}</span>
+      ) : (
+        <a href={c.href} class="hover:text-[color:var(--color-ink)]">{c.label}</a>
+      )}
+    </>
+  ))}
+</nav>

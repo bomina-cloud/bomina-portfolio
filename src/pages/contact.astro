@@ -1,0 +1,69 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Breadcrumbs from "~/components/Breadcrumbs.astro";
+import Divider from "~/components/Divider.astro";
+import { site } from "~/lib/site";
+---
+
+<BaseLayout
+  title="Contact"
+  description={`Get in touch with Bomina Yoon — ${site.email}. Future mobility strategist available for collaborations, advisory, research, and speaking engagements.`}
+  path="/contact"
+  keywords={["contact", "email", "advisory"]}
+>
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 pt-10 md:pt-16 pb-10">
+    <Breadcrumbs trail={[{ label: "Contact", href: "/contact" }]} />
+    <div class="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 md:items-end">
+      <div class="md:col-span-2 flex md:block items-center gap-4">
+        <p class="eyebrow">Contact</p>
+        <p class="eyebrow md:mt-1">{site.nameKo}</p>
+      </div>
+      <div class="md:col-span-10 min-w-0">
+        <h1 class="display-xl md:max-w-[18ch]">
+          <span class="display-italic">Collaboration,</span> advisory, research, and speaking.
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <Divider variant="asterism" class="mx-auto max-w-[1320px] px-6 md:px-10" />
+
+  <section class="mx-auto max-w-[1320px] px-6 md:px-10 py-14 md:py-28">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+      <div class="md:col-span-7 min-w-0">
+        <p class="eyebrow mb-5 md:mb-6">Direct</p>
+        <a href={`mailto:${site.email}`} class="font-display text-[1.5rem] md:text-[4rem] leading-[1.05] md:leading-[0.95] tracking-[-0.03em] block md:max-w-[14ch] break-all" style="font-variation-settings: 'opsz' 144, 'SOFT' 20;">
+          <span class="underline-draw">{site.email}</span>
+        </a>
+        <p class="mt-6 md:mt-8 max-w-[54ch] text-[0.9rem] md:text-[0.95rem] leading-[1.65] text-[color:var(--color-ink-soft)]">
+          For advisory, partnership, or speaking inquiries — a short note about the context and timeline
+          is always welcome. I typically respond within two business days.
+        </p>
+      </div>
+
+      <div class="md:col-span-5 min-w-0 md:pl-10 md:border-l border-[color:var(--color-line)] space-y-8 md:space-y-10">
+        <div>
+          <p class="eyebrow mb-3">Professional</p>
+          <a href={site.social.linkedin} rel="me noopener" target="_blank" class="font-serif italic text-[1.2rem] underline-draw">LinkedIn — Bomina Yoon</a>
+        </div>
+        <div>
+          <p class="eyebrow mb-3">Based in</p>
+          <p class="font-serif italic text-[1.2rem]">{site.location}</p>
+        </div>
+        <div>
+          <p class="eyebrow mb-3">Topics</p>
+          <ul class="text-[0.92rem] leading-[1.7] text-[color:var(--color-ink-soft)] space-y-1">
+            <li>· Future mobility foresight &amp; scenario planning</li>
+            <li>· Pre-Concept &amp; front-end innovation frameworks</li>
+            <li>· AI &amp; SDV strategy formulation</li>
+            <li>· Autonomous logistics architecture</li>
+            <li>· Urban Air Mobility &amp; smart-city systems</li>
+            <li>· Biomimicry-driven R&amp;D transformation</li>
+            <li>· Advanced composite materials (CFRP, bio-polymers)</li>
+            <li>· Executive-level innovation workshops</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

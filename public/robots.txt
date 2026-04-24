@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bominayoon.com/sitemap-index.xml

@@ -1,0 +1,54 @@
+---
+import { site } from "~/lib/site";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  alternateName: site.alternateName,
+  givenName: "Bomina",
+  familyName: "Yoon",
+  jobTitle: "Future Mobility Strategist",
+  description: site.tagline,
+  url: site.url,
+  email: `mailto:${site.email}`,
+  image: new URL("/og-default.png", site.url).toString(),
+  sameAs: [site.social.linkedin].filter(Boolean),
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "KR",
+    addressRegion: "Gyeonggi-do",
+    addressLocality: "Seongnam-si",
+  },
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Hongik University",
+      department: "Department of Industrial Design",
+    },
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Future Mobility Strategist",
+    occupationLocation: {
+      "@type": "Country",
+      name: "Republic of Korea",
+    },
+    skills:
+      "Future foresight, Pre-Concept development, AI strategy, autonomous logistics, Urban Air Mobility, Software-Defined Vehicles, biomimicry, advanced materials, corporate innovation",
+  },
+  knowsAbout: [
+    "Future Mobility",
+    "Industrial Design",
+    "Open Innovation",
+    "Autonomous Logistics",
+    "Urban Air Mobility",
+    "Software-Defined Vehicles",
+    "Biomimicry",
+    "Scenario Planning",
+  ],
+  knowsLanguage: ["ko", "en"],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />

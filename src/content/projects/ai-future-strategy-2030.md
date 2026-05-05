@@ -58,6 +58,8 @@ Built a **six-step R.E.A.D operation scenario** and implemented an in-car UX tha
 
 …all based on detected emotional states. Showcased at **CES 2019**.
 
+![R.E.A.D concept vehicle at CES 2019 — Kia booth installation showcasing the emotion-adaptive cabin](/images/projects/ai-future-strategy/ces2019-read-vehicle.webp)
+
 ## Global AI network conference
 
 Organized a large-scale AI global scholar and industry network conference inside Hyundai Motor Group, attended by **~5 group presidents, ~70 executives, and ~250 employees**.
@@ -70,6 +72,8 @@ Guru-level AI experts invited to lead value-chain-focused focus-group discussion
 - **André König** (City AI New York)
 
 Complex AI technology stacks were translated into visual, scenario-based narratives so C-level leaders could understand and make strategic decisions. The conference directly led to follow-on collaborations with Landing AI and Element AI on AI roadmaps, PoCs, and in-vehicle USP development.
+
+![AI × R.E.A.D (CES 2019) — value proposition, 2030 outlook scenarios, technology roadmap, and Hyundai action items](/images/projects/ai-future-strategy/ai-read-roadmap.jpg)
 
 ## Production impact
 

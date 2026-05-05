@@ -44,6 +44,10 @@ From that foundation, I developed the world's first media-specialized robotaxi b
 
 Each has distinct operational logic, content requirements, and media engagement pathways, structured into a tiered monetization model (Basic, Premium, Premier+) where price tier maps to immersion level, device complexity, and content type — integrating Augmented Reality (AR), 360° Motion-Based Virtual Reality (VR) Control, and the Metaverse Gate interface.
 
+![MMP value proposition — Hub Station to Home journey across the three monetizable service modules (CES 2024 DICE)](/images/projects/mmp-dice/mmp-value-proposition.jpg)
+
+![Robot Taxi MMP Hub Station — multimodal mobility vision integrating UAM and ground robotaxis](/images/projects/mmp-dice/robotaxi-hub-station.jpg)
+
 ## Economic viability with Roland Berger
 
 Built the full economic and operational viability model for media-specialized robotaxis with Roland Berger:
@@ -60,11 +64,19 @@ Defined the algorithmic and backend foundation for journey-based media personali
 
 Global media innovation partnerships included Disney StudioLAB (Burbank), Spotify, and CJ ENM, with co-development workshops validating content scenarios, immersive media formats, and vehicle-specific rendering methods.
 
+![Personas across the four primary content modes — music, AR, video, and metaverse-linked gaming](/images/projects/mmp-dice/personas.jpg)
+
 ## From concept to vehicle — DICE at CES 2024
 
 I served as experience lead and chief architect for DICE (Digital Curated Experience), transforming MMP from a service model into a physical vehicle equipped with transparent OLED displays, spatial audio, metaverse-entry interfaces, and hyper-personalized single-passenger cabin design.
 
 The project direction shifted from an early two-seat bidirectional layout to a one-seat personalized **media mobility device**, redefining DICE as Hyundai's flagship immersive mobility concept at CES 2024. MMP was then integrated into Hyundai's Software-Defined Vehicle (SDV) ecosystem, defined as a service and UX layer running on the Pleos Vehicle OS, and presented in CEO-level strategy forums where it contributed to Hyundai's official CES 2024 SDV vision.
+
+![DICE — top-down view at the Hyundai America Design Center](/images/projects/mmp-dice/dice-top-view.jpg)
+
+![DICE exterior and the hidden Sidestick — manual override interface](/images/projects/mmp-dice/dice-exterior-sidestick.jpg)
+
+![DICE — Digital Curated Experience mobility, synced with AI to deliver tailored services](/images/projects/mmp-dice/dice-digital-curated.jpg)
 
 ## Cabin architecture
 

@@ -5,18 +5,18 @@
    when Tailwind's import expands before a CSS @import url(). */
 
 @theme {
-  --font-display: "Fraunces", "Times New Roman", Georgia, serif;
+  --font-display: "Inter", "Helvetica Neue", "Helvetica", "Arial", "MS UI Gothic", "MS Gothic", system-ui, sans-serif;
   --font-serif: "Instrument Serif", "Fraunces", Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-ink: #111110;
-  --color-ink-soft: #2a2926;
-  --color-paper: #f5f2ea;
-  --color-paper-deep: #ebe6d8;
-  --color-muted: #6b685f;
-  --color-line: #d8d4c5;
-  --color-line-soft: #e8e4d8;
+  --color-ink: #0000cc;
+  --color-ink-soft: #1d1d3a;
+  --color-paper: #fbf9d7;
+  --color-paper-deep: #f4f0bd;
+  --color-muted: #4a4a73;
+  --color-line: #d6d2a8;
+  --color-line-soft: #e8e3bd;
   --color-accent: #ad2b1f;
 
   --tracking-display: -0.03em;
@@ -59,8 +59,8 @@
     font-weight: 400;
     line-height: 1.55;
     background-image:
-      radial-gradient(circle at 10% 10%, rgba(17, 17, 16, 0.015) 0, transparent 40%),
-      radial-gradient(circle at 90% 90%, rgba(17, 17, 16, 0.02) 0, transparent 45%);
+      radial-gradient(circle at 10% 10%, rgba(0, 0, 204, 0.018) 0, transparent 42%),
+      radial-gradient(circle at 90% 90%, rgba(0, 0, 204, 0.022) 0, transparent 48%);
     background-attachment: fixed;
   }
 
@@ -76,14 +76,14 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 1.04;
-    font-variation-settings: "opsz" 64, "SOFT" 40;
-    letter-spacing: var(--tracking-display);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-ink);
   }
 
   h1 {
-    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-weight: 800;
   }
 
   h4 {
@@ -91,6 +91,7 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: var(--tracking-tight);
+    color: var(--color-ink);
   }
 
   em {
@@ -268,11 +269,11 @@
 
   .display-xl {
     font-family: var(--font-display);
-    font-size: clamp(1.75rem, 7vw, 5.75rem);
-    line-height: 1.02;
-    letter-spacing: var(--tracking-display);
-    font-variation-settings: "opsz" 144, "SOFT" 20;
-    font-weight: 400;
+    font-size: clamp(1.75rem, 6.4vw, 5.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+    color: var(--color-ink);
     overflow-wrap: break-word;
     word-break: keep-all;
     hyphens: none;
@@ -280,11 +281,11 @@
 
   .display-lg {
     font-family: var(--font-display);
-    font-size: clamp(1.4rem, 5vw, 3.8rem);
-    line-height: 1.06;
-    letter-spacing: var(--tracking-display);
-    font-variation-settings: "opsz" 96, "SOFT" 25;
-    font-weight: 400;
+    font-size: clamp(1.4rem, 4.6vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    color: var(--color-ink);
     overflow-wrap: break-word;
     word-break: keep-all;
     hyphens: none;
@@ -292,11 +293,11 @@
 
   .display-md {
     font-family: var(--font-display);
-    font-size: clamp(1.2rem, 3.5vw, 2.4rem);
-    line-height: 1.1;
-    letter-spacing: var(--tracking-tight);
-    font-variation-settings: "opsz" 72, "SOFT" 30;
-    font-weight: 400;
+    font-size: clamp(1.15rem, 3.2vw, 2.1rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    font-weight: 800;
+    color: var(--color-ink);
     overflow-wrap: break-word;
     word-break: keep-all;
     hyphens: none;
@@ -307,6 +308,7 @@
     font-style: italic;
     font-weight: 400;
     letter-spacing: -0.01em;
+    color: var(--color-ink);
   }
 
   .prose {
@@ -318,13 +320,13 @@
 
   .prose h2 {
     font-family: var(--font-display);
-    font-size: 1.85rem;
-    line-height: 1.1;
-    letter-spacing: var(--tracking-tight);
+    font-size: 1.7rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
     margin-top: 2.75rem;
     margin-bottom: 1rem;
     color: var(--color-ink);
-    font-variation-settings: "opsz" 72, "SOFT" 30;
+    font-weight: 800;
   }
 
   .prose h3 {
@@ -335,6 +337,54 @@
     margin-top: 2rem;
     margin-bottom: 0.65rem;
     color: var(--color-ink);
+  }
+
+  .prose img {
+    display: block;
+    max-width: min(100%, 460px);
+    height: auto;
+    margin: 1.6rem 0;
+    border: 1px solid var(--color-line);
+    background: var(--color-paper-deep);
+  }
+
+  .prose figure {
+    margin: 1.6rem 0;
+  }
+
+  .prose figure img {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .prose figure figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  /* Homepage hero copy — tighter on mobile per design feedback */
+  .hero-lede {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .hero-currently {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .hero-lede {
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .hero-currently {
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
   }
 
   .prose p {

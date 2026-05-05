@@ -41,6 +41,8 @@ Phased new-business roadmaps were built for 2025, 2035, and 2050, yielding **15 
 
 Differentiated transport architectures were structured for each city type, linking services, hardware, platforms, and infrastructure through shared data flows. Renewable and distributed-energy value-chain opportunities were identified at the consumer and retail levels.
 
+![Future Cities Project (CES 2020) — value proposition, five city archetypes, and infrastructure diagrams](/images/projects/2050-future-city/ces2020-overview.jpg)
+
 ## Validation & workshops
 
 A **Delphi workshop** was organized in Singapore (Feb 2019) with nine global urban experts — including leaders from UN-Habitat, 100 Resilient Cities, and energy policy advisors — to validate future scenarios, refine city-type characteristics, and identify key opportunities and risks across mobility and energy domains.
@@ -62,7 +64,15 @@ Linked to urban futures and connected back to 2035/2050 end-goals for each execu
 
 Designed as an alternative transport infrastructure for high-density cities by linking Urban Air Mobility (UAM) and PBV into a seamless multimodal transfer hub. Addresses the constraints of aging, high-density cities (e.g., San Francisco) through a modular hub that enhances commuting efficiency and supports new urban lifestyles.
 
+![San Francisco vision render — UAM, PBV modules, and the multimodal Hub linked across the bay](/images/projects/2050-future-city/san-francisco-vision.jpg)
+
+![Hub Solution aerial view — UAM landing pad with PBV modules circulating to street level](/images/projects/2050-future-city/hub-solution-aerial.jpg)
+
+![CES 2020 Hyundai booth — UAM and Hub Solution scale model on the show floor](/images/projects/2050-future-city/ces-uam-exhibit.jpg)
+
 UX journeys, PBV spatial concepts, and the integrated UAM–PBV–Hub ecosystem narrative were created in collaboration with global design centers. Keynote planning for the **Mobility Insight Forum (MIF) 2019** in San Francisco was led in parallel, with the vision presented again at CES 2020.
+
+![Hub interior PBV modules — adaptive cabin scenarios across living, work, and transit](/images/projects/2050-future-city/hub-interior-panels.png)
 
 Simulation-based smart-city and hub-infrastructure models demonstrated potential to improve urban travel times by approximately **30–45%** and transfer efficiency by around **25%**, positioning the Hub Solution as a validated mitigation strategy for congestion and commuting bottlenecks.
 

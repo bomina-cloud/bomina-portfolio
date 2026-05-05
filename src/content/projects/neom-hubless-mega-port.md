@@ -42,15 +42,21 @@ I developed the full logistics value-chain model for next-generation autonomous 
 
 KPIs and functional roles were defined for each segment, with cargo-flow rates, automation ratios, throughput potential, and peak-condition capacity modeled against OXAGON's projected 2,500 containers/day.
 
+![NEOM OXAGON aerial view alongside the autonomous trailer drone fleet](/images/projects/neom-trailer-drone/oxagon-trailer-drone.jpg)
+
 ## The Hub-less Mega Port concept
 
 The spiral-based underground port–fulfillment system eliminates traditional bottlenecks by integrating all critical processes into a continuous, automation-driven vertical cargo flow. Cargo unloading, sorting, customs, quarantine, and fulfillment occur simultaneously as freight moves vertically through the spiral structure, removing intermediate logistics nodes and enabling continuous flow from ports to inland hubs.
+
+![Spiral Hubless Port — system structure and container flow logic](/images/projects/neom-trailer-drone/spiral-hubless-port.jpg)
 
 I directed simulation-based feasibility studies and developed quantifiable logistics performance indicators, built in Blender and the SIGMA program. Use-case-specific technical parameters — spiral diameter, gradient angle, underground depth, conveyor-belt width, load criteria, and the trailer drone's dimensional profile, payload capacity, and operating envelope — were optimized through rapid expert-validated iteration. System-level vehicle integration was implemented through Alias to ensure seamless connectivity with the broader mobility ecosystem.
 
 ## Autonomous trailer drone
 
 The trailer drone is an energy-efficient 4×2 driverless transport platform with a modular, swappable architecture deployable across logistics, port operations, airport services, construction, and other industrial sectors. I defined the hardware specifications needed for deployment within the Hub-less Mega Port system — size constraints, Side-Loading interface requirements, docking logic, operational envelopes, mid-mile routing behavior, and module coupling/decoupling conditions — and developed initial device orchestration logic for how multiple devices (trailers, e-bogies, modules, cargo units) interact across nodes.
+
+![Hubless Mega Port concept development — sketches, prototype models, and expert workshops (Aug 2022)](/images/projects/neom-trailer-drone/development-process.jpg)
 
 ## Strategic impact
 

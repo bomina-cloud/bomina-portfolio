@@ -4,7 +4,7 @@ subtitle: "Hyundai–Kia's first feature-first, car-second development strategy"
 period: "Mar 2015 – Nov 2016"
 order: 6
 status: completed
-featured: false
+featured: true
 role: "Senior Designer — Hyundai Motor Group"
 partners:
   - "Hyundai Motor Group Central Research Institute"
@@ -31,9 +31,17 @@ Initiated Kia's first **"feature-first, car-second"** development strategy, prop
 
 Predicted that post-2020 consumer behavior would accelerate toward personalized, upper-trim preferences, influencing profitability and requiring OEMs to offer flexible, curated option packages. Proposed the concept of **"Pack-Curation"** — enabling customers to configure personalized option bundles based on future lifestyle segments.
 
+![2020 미래 고객 특화요소 연구 — Kia future-customer research deck cover & contents](/images/projects/kia-feature-strategy/future-study-cover.jpg)
+
+![Future-research process — 2010 to 2020 timeline of preceding research foundations](/images/projects/kia-feature-strategy/future-study-process.jpg)
+
 ## Technology Roadmap (TRM) with CRI
 
 Conducted Technology Roadmap research with the **Central Research Institute**, evaluating 30+ emerging technologies and integrating them into Kia/HMG's long-term TRM. Produced a **feature-development guideline** defining required sub-technologies, current maturity levels, and 5–10 year development priorities.
+
+![Why 2020 — segmentation and consumer-behavior shift modeling](/images/projects/kia-feature-strategy/why-2020.jpg)
+
+![Cubic segmentation framework — multi-axis customer segmentation for advanced UX features](/images/projects/kia-feature-strategy/segmentation.jpg)
 
 ## T-Car TF launch
 
@@ -52,8 +60,14 @@ Developed UX and display concepts targeted at post-smartphone consumers:
 - **Driving-habit-based infotainment customization**
 - **Personalized controller & start-up UX**
 
+![T-Car concept interior — Digital GEEK Pack with KIA Launcher, gesture sensor, and dual-display layout](/images/projects/kia-feature-strategy/digital-geek.jpg)
+
+![T-Car concept — multi-touch integrated controller and smart-watch–linked vehicle UX](/images/projects/kia-feature-strategy/kia-t-car-concept.jpg)
+
 ## Mass-production impact
 
 - **Force-sensing DIS controller** — applied first to Genesis GV80 (2020), now across all Genesis models
 - **Core T-Car UX features** adopted by Genesis, Hyundai, and Kia in premium and mass-market segments
 - The organization-wide **"Advanced Feature Development Strategy"** became a standard approach across Hyundai/Kia/Genesis product lines, integrating early feature innovation into mainstream vehicle development.
+
+![Genesis G90 Long Wheel Base — Dial-type Shift-by-Wire & Genesis Integrated Controller (mass production)](/images/projects/kia-feature-strategy/genesis-integrated-controller.jpg)

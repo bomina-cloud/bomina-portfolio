@@ -4,7 +4,7 @@ subtitle: "Ten-year future-vehicle technology scenarios and the Panoramic Infota
 period: "Mar 2011 – Nov 2014"
 order: 7
 status: completed
-featured: false
+featured: true
 role: "Senior Designer — Hyundai Motor Group"
 partners:
   - "GQ Magazine"
@@ -46,6 +46,10 @@ Covert small-group roundtables were organized in symbolic cultural districts (It
 
 A **Grounded Theory** coding process extracted core cultural codes. Global expansion came through partnerships with Chicago Innovation Center and Europe's 21st-Century Research Center.
 
+![Cultural foresight with GQ Magazine — "Future is Now / Street" feature spread documenting cultural-technology research](/images/projects/human-centered-ux/cultural-foresight-gq.jpg)
+
+![GQ × Hyundai "Future Car Project" — published cultural-technology narrative on next-generation mobility](/images/projects/human-centered-ux/futures-future-car-project.jpg)
+
 ## Technological Humanization
 
 Predicted future consumer cultural orientation and converted insights into **nine human-centered emotional-tech concepts** linked to autonomous services, sustainable materials/energy, and next-generation HMI. Conducted joint workshops with MIT Mobile Experience Lab (Prof. Federico Casalegno) to create cultural-technology scenarios and define emotional technology roadmaps.
@@ -57,6 +61,12 @@ Introduced the concept of **"Technological Humanization"** into vehicle UX and p
 Led the development of the **Panoramic Infotainment System** (now mass-produced in Genesis models), enabling real-time weather/season-responsive visual environments and emotionally immersive display transitions.
 
 Created **digital Cover-Skin UX (Mood Mode)**, where icons adapt to temperature, ice density, and other contextual cues — a concept paralleling Apple's later ICE UX approach.
+
+![Genesis Panoramic Infotainment System — iF DESIGN AWARD 2024 winner, Automotive UI](/images/projects/human-centered-ux/genesis-pis-iF.jpg)
+
+![Season's Greetings — weather/season-responsive cluster theme delivered through the Panoramic Infotainment System](/images/projects/human-centered-ux/seasons-greetings.jpg)
+
+![Strategic Vision for 2024 developed in 2014 — Emotional Mood Mode, a sensory-driven system that brings nature into the cabin](/images/projects/human-centered-ux/emotional-mood-mode.jpg)
 
 ## Hyper Controller System
 

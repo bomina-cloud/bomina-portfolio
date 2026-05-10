@@ -49,6 +49,8 @@ A **Delphi workshop** was organized in Singapore (Feb 2019) with nine global urb
 
 A **group-wide backcasting workshop** with 50 Hyundai engineers (May 2019) converted 2050 scenarios into actionable 2035 and 2025 development roadmaps across all executing departments. Department-specific guidance documents connected current R&D tasks to 2035/2050 end-goals, later formalized as part of the execution framework.
 
+![Future Cities Foundation Research — bound research books from the program](/images/projects/2050-future-city/future-cities-booklet.jpg)
+
 ## Six core mobility opportunity areas
 
 Linked to urban futures and connected back to 2035/2050 end-goals for each executing department:

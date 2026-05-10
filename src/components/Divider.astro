@@ -15,7 +15,11 @@ const { variant = "ornament", class: className = "" } = Astro.props;
 )}
 
 {variant === "asterism" && (
-  <div class={`hr-ornament ${className}`} role="presentation" aria-hidden="true">
-    <span>✺ ✺ ✺</span>
+  <div class={`hr-bars ${className}`} role="presentation" aria-hidden="true">
+    <span class="hr-bars__lines" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
   </div>
 )}

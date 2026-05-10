@@ -78,6 +78,8 @@ The project direction shifted from an early two-seat bidirectional layout to a o
 
 ![DICE — Digital Curated Experience mobility, synced with AI to deliver tailored services](/images/projects/mmp-dice/dice-digital-curated.jpg)
 
+![iF DESIGN AWARD 2025 — DICE / Product / Automobiles / Vehicles, Hyundai Motor Company × Hyundai Genesis Global Design](/images/projects/mmp-dice/if-design-award-2025.jpg)
+
 ## Cabin architecture
 
 Redefined Level-5 robotaxi interior architecture through:

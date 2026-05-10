@@ -73,8 +73,14 @@ Guru-level AI experts invited to lead value-chain-focused focus-group discussion
 
 Complex AI technology stacks were translated into visual, scenario-based narratives so C-level leaders could understand and make strategic decisions. The conference directly led to follow-on collaborations with Landing AI and Element AI on AI roadmaps, PoCs, and in-vehicle USP development.
 
+![AI Experts gallery — Andrew Ng, Philippe Beaudoin, André König, Nobert Streitz and other invited guru-level guests](/images/projects/ai-future-strategy/workshop-experts.jpg)
+
+![Element AI × Hyundai Motor Group — co-development partnership for the 2030 AI Technology Roadmap](/images/projects/ai-future-strategy/workshop.jpg)
+
 ![AI × R.E.A.D (CES 2019) — value proposition, 2030 outlook scenarios, technology roadmap, and Hyundai action items](/images/projects/ai-future-strategy/ai-read-roadmap.jpg)
 
 ## Production impact
 
 AI-driven concepts flowed back into vehicle programs and USPs — multiple AI features were further developed into unique selling propositions for concept vehicles. Design-evaluation sessions integrated several of these features into the IONIQ 5 concept model, contributing to decisions that shaped the final production steering-wheel design.
+
+![IONIQ 5 production steering wheel and Hyundai H-SPACE concept booth — AI-driven UX features carried into mass production](/images/projects/ai-future-strategy/production-impact.jpg)

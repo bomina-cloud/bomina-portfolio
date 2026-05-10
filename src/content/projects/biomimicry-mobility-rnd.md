@@ -4,7 +4,7 @@ subtitle: "Transforming biomimicry from a design tool into a corporate innovatio
 period: "Dec 2024 – Present"
 order: 5
 status: active
-featured: true
+featured: false
 role: "Senior Manager — Hyundai Motor Group"
 partners:
   - "RISD Nature Lab"

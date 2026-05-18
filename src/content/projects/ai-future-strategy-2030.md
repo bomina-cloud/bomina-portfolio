@@ -83,4 +83,13 @@ Complex AI technology stacks were translated into visual, scenario-based narrati
 
 AI-driven concepts flowed back into vehicle programs and USPs — multiple AI features were further developed into unique selling propositions for concept vehicles. Design-evaluation sessions integrated several of these features into the IONIQ 5 concept model, contributing to decisions that shaped the final production steering-wheel design.
 
-![IONIQ 5 production steering wheel and Hyundai H-SPACE concept booth — AI-driven UX features carried into mass production](/images/projects/ai-future-strategy/production-impact.jpg)
+<div class="image-row">
+  <figure>
+    <img src="/images/projects/ai-future-strategy/production-impact.jpg" alt="IONIQ 5 production steering wheel — AI-driven UX features carried into mass production" loading="lazy" />
+    <figcaption>IONIQ 5 production steering wheel — AI-driven UX features carried into mass production</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/projects/ai-future-strategy/hyundai-h-space-booth.jpg" alt='Hyundai "Style Set Free" H-SPACE concept booth — AI-driven mobility-experience zone derived from the 2030 roadmap' loading="lazy" />
+    <figcaption>Hyundai "Style Set Free" H-SPACE concept booth — AI-driven mobility-experience zone derived from the 2030 roadmap</figcaption>
+  </figure>
+</div>

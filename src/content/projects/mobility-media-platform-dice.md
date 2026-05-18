@@ -78,7 +78,18 @@ The project direction shifted from an early two-seat bidirectional layout to a o
 
 ![DICE — Digital Curated Experience mobility, synced with AI to deliver tailored services](/images/projects/mmp-dice/dice-digital-curated.jpg)
 
-![iF DESIGN AWARD 2025 — DICE / Product / Automobiles / Vehicles, Hyundai Motor Company × Hyundai Genesis Global Design](/images/projects/mmp-dice/if-design-award-2025.jpg)
+<div class="image-row">
+  <figure>
+    <img src="/images/projects/mmp-dice/if-design-award-2025.jpg" alt="iF DESIGN AWARD 2025 — DICE / Product / Automobiles / Vehicles, Hyundai Motor Company × Hyundai Genesis Global Design" loading="lazy" />
+    <figcaption>iF DESIGN AWARD 2025 — DICE / Product / Automobiles / Vehicles, Hyundai Motor Company × Hyundai Genesis Global Design</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/projects/mmp-dice/red-dot-award-2024.jpg" alt="Red Dot Award: Design Concept 2024 — DICE, Hyundai Motor Company × Hyundai Design Center" loading="lazy" />
+    <figcaption>Red Dot Award: Design Concept 2024 — DICE, Hyundai Motor Company × Hyundai Design Center</figcaption>
+  </figure>
+</div>
+
+Both certificates honor the DICE concept that emerged from the Mobility Media Platform program — iF DESIGN AWARD 2025 (Product / Automobiles / Vehicles) and Red Dot Award 2024 (Design Concept).
 
 ## Cabin architecture
 

@@ -21,11 +21,14 @@ const {
   type = "website",
   image,
   keywords = [],
-  noindex = false,
+  noindex: _noindex = false,
   publishedTime,
   modifiedTime = site.seo.dateModified,
   section,
 } = Astro.props;
+
+// Temporary site-wide noindex — flip to `_noindex` to restore per-page behavior.
+const noindex = true;
 
 const pageTitle = title ? `${title} — ${site.name}` : `${site.name} · ${site.headline}`;
 const normalizedPath = path.replace(/\.html$/, "").replace(/\/$/, "") || "/";

@@ -49,7 +49,16 @@ A **Delphi workshop** was organized in Singapore (Feb 2019) with nine global urb
 
 A **group-wide backcasting workshop** with 50 Hyundai engineers (May 2019) converted 2050 scenarios into actionable 2035 and 2025 development roadmaps across all executing departments. Department-specific guidance documents connected current R&D tasks to 2035/2050 end-goals, later formalized as part of the execution framework.
 
-![Future Cities Foundation Research — bound research books from the program](/images/projects/2050-future-city/future-cities-booklet.jpg)
+<div class="image-row">
+  <figure>
+    <img src="/images/projects/2050-future-city/future-cities-booklet.jpg" alt="Delphi workshop session for the 2050 Future Cities program — Singapore, February 2019" loading="lazy" />
+    <figcaption>Delphi workshop — Singapore, Feb 2019, with global urban experts validating future-city scenarios</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/projects/2050-future-city/future-cities-booklet-large.jpg" alt='Future Cities 2050 (Hyundai × Kantar Consulting) — bound foundation-research booklet and workshop booklet with value-enabler and city-overview spreads' loading="lazy" />
+    <figcaption>Future Cities 2050 (Hyundai × Kantar Consulting) — foundation-research booklet, workshop booklet, value-enabler and city-overview spreads</figcaption>
+  </figure>
+</div>
 
 ## Six core mobility opportunity areas
 

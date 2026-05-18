@@ -396,6 +396,33 @@
     color: var(--color-muted);
   }
 
+  .prose .image-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.6rem 0;
+    max-width: 100%;
+  }
+
+  @media (min-width: 720px) {
+    .prose .image-row {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+  }
+
+  .prose .image-row figure {
+    margin: 0;
+  }
+
+  .prose .image-row img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 0.5rem 0;
+    object-fit: cover;
+  }
+
   /* Homepage hero copy — tighter on mobile per design feedback */
   .hero-lede {
     font-size: 0.92rem;

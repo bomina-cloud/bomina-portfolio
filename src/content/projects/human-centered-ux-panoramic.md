@@ -46,9 +46,16 @@ Covert small-group roundtables were organized in symbolic cultural districts (It
 
 A **Grounded Theory** coding process extracted core cultural codes. Global expansion came through partnerships with Chicago Innovation Center and Europe's 21st-Century Research Center.
 
-![Cultural foresight with GQ Magazine — "Future is Now / Street" feature spread documenting cultural-technology research](/images/projects/human-centered-ux/cultural-foresight-gq.jpg)
-
-![GQ × Hyundai "Future Car Project" — published cultural-technology narrative on next-generation mobility](/images/projects/human-centered-ux/futures-future-car-project.jpg)
+<div class="image-row">
+  <figure>
+    <img src="/images/projects/human-centered-ux/gq-future-car-project.jpg" alt='GQ × Hyundai "Future Car Project" — published cultural-technology narrative on next-generation mobility' loading="lazy" />
+    <figcaption>GQ × Hyundai "Future Car Project" — published cultural-technology narrative on next-generation mobility</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/projects/human-centered-ux/gq-future-is-now.jpg" alt='Cultural foresight with GQ Magazine — "Future is Now / Street" feature spread documenting cultural-technology research' loading="lazy" />
+    <figcaption>Cultural foresight with GQ Magazine — "Future is Now / Street" feature spread documenting cultural-technology research</figcaption>
+  </figure>
+</div>
 
 ## Technological Humanization
 
